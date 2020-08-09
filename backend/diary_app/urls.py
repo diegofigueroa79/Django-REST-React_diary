@@ -5,5 +5,5 @@ from .views import ArticleListView, ArticleDetailView
 app_name = "diary"
 urlpatterns = [
     path('', ArticleListView.as_view()),
-    path('', ArticleDetailView.as_view()),
+    path('<pk>', ArticleDetailView.as_view()),
 ]
