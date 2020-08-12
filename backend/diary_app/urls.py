@@ -1,12 +1,10 @@
 from django.urls import path
 
-from .views import ArticleListView, ArticleDetailView, ArticleCreateView, ArticleDestroyView, ArticleUpdateView
+from .views import ArticleViewSet
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register('articles', ArticleViewSet)
 
 app_name = "diary"
-urlpatterns = [
-    path('', ArticleListView.as_view()),
-    path('create/', ArticleCreateView.as_view()),
-    path('<pk>', ArticleDetailView.as_view()),
-    path('<pk>/destroy/', ArticleDestroyView.as_view()),
-    path('<pk>/update/', ArticleUpdateView.as_view()),
-]
+urlpatterns = router.urls
