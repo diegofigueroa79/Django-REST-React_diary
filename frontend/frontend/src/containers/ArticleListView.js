@@ -14,7 +14,7 @@ class ArticleList extends React.Component {
     componentDidMount() {
         // simple get request with axios
         // returns a promise
-        axios.get('http://127.0.0.1:8000/diary/api/')
+        axios.get('http://127.0.0.1:8000/diary/api/articles/')
             // in our promise we want to change the state
             .then(response => {
                 this.setState({

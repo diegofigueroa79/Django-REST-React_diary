@@ -13,7 +13,7 @@ class ArticleDetail extends  React.Component {
         // grabbing url paramter
         // querying a match of url parameters
         const articleID = this.props.match.params.articleID;
-        axios.get(`http://127.0.0.1:8000/diary/api/${articleID}`)
+        axios.get(`http://127.0.0.1:8000/diary/api/articles/${articleID}`)
             .then( response => {
                 this.setState({
                     article: response.data
