@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import BaseRouter from './routes.js'
 import 'antd/dist/antd.css';
 
@@ -8,11 +8,11 @@ import CustomLayout from './containers/layout.js';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <CustomLayout>
           <BaseRouter />
         </CustomLayout>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
