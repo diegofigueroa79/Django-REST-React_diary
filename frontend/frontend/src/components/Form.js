@@ -4,15 +4,35 @@ import axios from 'axios';
 
 class CustomForm extends React.Component {
 
-    handleFormSubmit = (event) => {
+    handleFormSubmit = (event, requestType, articleID) => {
         const title = event.target.elements.title.value;
         const content = event.target.elements.content.value;
 
-        console.log(title, content);
+        switch(requestType) {
+            case 'post':
+                axios.post('http://127.0.0.1:8000/diary/api/articles/', {
+                    title: title,
+                    content: content
+                })
+                .then(res => console.log(res))
+                .catch(err => console.error(err))
+                break
+            case 'put':
+                axios.put(`http://127.0.0.1:8000/diary/api/articles/${articleID}/`, {
+                    title: title,
+                    content: content
+                })
+                .then(res => console.log(res))
+                .catch(err => console.error(err))
+        }
     }
     render() {
         return (
-            <Form onSubmitCapture={this.handleFormSubmit}>
+            <Form onSubmitCapture={(event) => this.handleFormSubmit(
+                event,
+                this.props.requestType,
+                this.props.articleID
+            )}>
                 <Form.Item label="Title">
                 <Input name="title" placeholder="input placeholder" />
                 </Form.Item>

@@ -29,7 +29,10 @@ class ArticleList extends React.Component {
             <div>
                 <Article data={this.state.articles} />
                 <h1>Add an Article</h1>
-                <CustomForm></CustomForm>
+                <CustomForm
+                    requestType='post'
+                    articleID={null}
+                ></CustomForm>
             </div>
         )
     }

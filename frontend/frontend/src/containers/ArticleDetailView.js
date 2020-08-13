@@ -27,7 +27,10 @@ class ArticleDetail extends  React.Component {
                 <Card title={this.state.article.title}>
                     <p>{this.state.article.content}</p>
                 </Card>
-                <CustomForm></CustomForm>
+                <CustomForm
+                    requestType= 'put'
+                    articleID= {this.props.match.params.articleID}
+                ></CustomForm>
             </div>
         )
     }
