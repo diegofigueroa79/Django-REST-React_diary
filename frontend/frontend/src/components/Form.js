@@ -34,10 +34,10 @@ class CustomForm extends React.Component {
                 this.props.articleID
             )}>
                 <Form.Item label="Title">
-                <Input name="title" placeholder="input placeholder" />
+                <Input name="title" />
                 </Form.Item>
-                <Form.Item name="content" label="Content">
-                <Input placeholder="input placeholder" />
+                <Form.Item label="Content">
+                <Input name="content"/>
                 </Form.Item>
                 <Form.Item>
                 <Button type="primary" htmlType="submit">Submit</Button>
